@@ -1,0 +1,137 @@
+  {
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"],
+      "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+      "context": [""]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+      "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+      "context": [""]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"],
+      "context": [""]
+    },
+    {
+      "tag": "noanswer",
+      "patterns": [" "],
+      "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+      "context": [""]
+    },
+    {
+      "tag":"symptoms_fever",
+      "patterns": ["symptoms of fever","fever symptoms"],
+      "responses": ["Sweating, shivering, Headache, Muscle aches, Loss of appetite, Dehydration, General weakness."],
+      "context": ["precautions_for_fever"]
+    },
+    {
+      "tag": "precautions_for_fever",
+      "patterns": ["Could you suugest some tablets for fever","any tablets","tablets"],
+      "responses": ["You can consider taking <a href='https://www.apollopharmacy.in/salt/ACETAMINOPHEN' target='_blank'>Acetaminophen (Tylenol)</a> and <a href='https://www.apollopharmacy.in/salt/IBUPROFEN' target='_blank'>ibuprofen (Advil, Motrin)</a> to reduce fever. Please consult with a healthcare professional for proper dosage and advice."]
+    },
+      {
+        "tag": "symptoms_headache",
+        "patterns": ["symptoms of headache", "headache symptoms"],
+        "responses": ["Headache is a pain or discomfort in the head, scalp, or neck region. It can vary in intensity and duration and may be accompanied by other symptoms such as sensitivity to light or sound, nausea, or vomiting."],
+        "context": ["precautions_for_headache"]
+      },
+      {
+        "tag": "precautions_for_headache",
+        "patterns": ["What can I do for a headache?", "How to relieve headache?", "Headache remedies"],
+        "responses": ["Rest in a quiet, dark room. Practice relaxation techniques such as deep breathing or meditation. Apply a cold compress or ice pack to the forehead or temples. Take over-the-counter pain relievers such as ibuprofen (Advil, Motrin) or acetaminophen (Tylenol), following package instructions."],
+        "context": ["medications_for_headache"]
+      },
+      {
+        "tag": "medications_for_headache",
+        "patterns": ["What medicine can I take for a headache?", "Headache medication", "Painkillers for headache"],
+        "responses": ["Common over-the-counter medications for headache include aspirin, ibuprofen (Advil, Motrin), acetaminophen (Tylenol), and naproxen (Aleve). It's important to follow the dosage instructions provided on the packaging and consult a healthcare professional if you have any concerns or underlying health conditions."],
+        "context": []
+      },
+      {
+        "tag": "symptoms_stomachache",
+        "patterns": ["symptoms of stomachache", "stomachache symptoms"],
+        "responses": ["Stomachache, also known as abdominal pain, can occur for various reasons, including indigestion, gas, constipation, diarrhea, food poisoning, or gastrointestinal infections. It may be accompanied by symptoms such as nausea, vomiting, bloating, or cramping."],
+        "context": ["precautions_for_stomachache"]
+      },
+      {
+        "tag": "precautions_for_stomachache",
+        "patterns": ["What should I do for a stomachache?", "How to relieve stomachache?", "Stomachache remedies"],
+        "responses": ["Rest and avoid strenuous activities. Drink clear fluids to stay hydrated, such as water, herbal tea, or clear broths. Eat bland foods that are easy to digest, such as bananas, rice, applesauce, or toast (BRAT diet). Avoid spicy, greasy, or heavy foods. Use over-the-counter medications for relief, such as antacids for indigestion or anti-diarrheal medication if needed."],
+        "context": ["medications_for_stomachache"]
+      },
+      {
+        "tag": "medications_for_stomachache",
+        "patterns": ["What medicine can I take for a stomachache?", "Stomachache medication", "Painkillers for stomachache"],
+        "responses": ["For mild stomachaches, over-the-counter antacids (e.g., Maalox, Tums) can help neutralize stomach acid and provide relief. If the stomachache is due to indigestion or gas, medications such as simethicone (Gas-X) may be helpful. For more severe pain or symptoms of gastroenteritis, consult a healthcare professional for appropriate treatment, which may include prescription medications such as antibiotics or antiemetics."],
+        "context": []
+      },     
+    
+    {
+      "tag": "options",
+      "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+      "responses": ["I can guide you through adverse drug reactions, blood pressure tracking, hospitals, and pharmacies.", "I offer support for adverse drug reactions, blood pressure, hospitals, and pharmacies."],
+      "context": [""]
+    },
+    {
+      "tag": "adverse_drug",
+      "patterns": ["How to check adverse drug reactions?", "Open adverse drugs module", "List drugs causing adverse behavior", "List drugs suitable for patients with adverse reactions", "Which drugs don't have adverse reactions?"],
+      "responses": ["Navigating to the Adverse Drug Reaction module."],
+      "context": [""]
+    },
+    {
+      "tag": "blood_pressure",
+      "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management"],
+      "responses": ["Navigating to the Blood Pressure module."],
+      "context": [""]
+    },
+    {
+      "tag": "blood_pressure_search",
+      "patterns": ["Search for blood pressure result history", "Blood pressure for a patient", "Load patient blood pressure results", "Show blood pressure results for a patient", "Find blood pressure results by ID"],
+      "responses": ["Please provide the Patient ID.", "What is the Patient ID?"],
+      "context": ["search_blood_pressure_by_patient_id"]
+    },
+    {
+      "tag": "search_blood_pressure_by_patient_id",
+      "patterns": [],
+      "responses": ["Loading Blood pressure results for the patient."],
+      "context": [""]
+    },
+    {
+      "tag": "pharmacy_search",
+      "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy"],
+      "responses": ["Sure, I can help you find a pharmacy. Please provide the name or location of the pharmacy you're looking for."],
+      "context": ["search_pharmacy"]
+    },
+    {
+      "tag": "search_pharmacy",
+      "patterns": ["sateesh pharmacy"],
+      "responses": ["sateesh pharmacy was present in the kharar"],
+      "context": [""]
+    },
+    
+    {
+      "tag": "hospital_search",
+      "patterns": ["Lookup for a hospital", "Searching for a hospital to transfer a patient", "I want to search hospital data", "Hospital lookup for a patient", "Looking up hospital details"],
+      "responses": ["Please provide the hospital name or location."],
+      "context": ["search_hospital_by_params"]
+    },
+    {
+      "tag": "search_hospital_by_params",
+      "patterns": [],
+      "responses": ["Please provide the hospital type."],
+      "context": ["search_hospital_by_type"]
+    },
+    {
+      "tag": "search_hospital_by_type",
+      "patterns": [],
+      "responses": ["Loading hospital details."],
+      "context": [""]
+    }
+  ]
+  }
